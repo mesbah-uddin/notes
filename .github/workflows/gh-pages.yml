@@ -5,6 +5,8 @@ on:
     branches:
       - main  # Set a branch to deploy
   pull_request:
+    branches:
+      - main  # Set a branch to deploy
 
 jobs:
   deploy:
@@ -19,7 +21,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.83.1'
-          # extended: true
+          extended: true
 
       - name: Build
         run: hugo --minify
